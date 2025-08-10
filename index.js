@@ -75,7 +75,7 @@ bot.on("message", async (msg) => {
   }else if(text === "📊 Курсы"){ //ОТВЕТ КУРСЫ 
     try {
       const response = await fetch("https://moscaex.online/api2/usdt_rate");
-      const data = response.json();
+      const data = await response.json();
       const apiBuy = parseFloat(data.buy); 
       const apiSell = parseFloat(data.sell);
       const buy = (apiBuy + 0.5).toFixed(2);
