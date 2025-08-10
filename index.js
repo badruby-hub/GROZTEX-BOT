@@ -9,10 +9,10 @@ bot.on("message", async (msg) => {
   const userName = msg.from.username;
   const firstName = msg.from.first_name;
   const lastName = msg.from.last_name;
-
+  
   const text = msg.text;
 
-  if (text === "/start") {
+  if (text === "/start") { //ОТВЕТ СТАРТ 
     await bot.sendMessage(
       chatId,`
 Добро пожаловать в GROZTEX 📍 Малгобекская улица, 19, Грозный, Республика Чечня
@@ -52,7 +52,7 @@ bot.on("message", async (msg) => {
         
         }
     })
-  }else if(text === "🏦 О нас") {
+  }else if(text === "🏦 О нас") { //ОТВЕТ О НАС 
          await bot.sendMessage(
       chatId,`
 🤖 О нас
@@ -72,13 +72,20 @@ bot.on("message", async (msg) => {
 
 Для получения консультации и покупки USDT, вам нужно создать заявку через приложение.` 
     );
-  }else if(text === "📊 Курсы"){
-    await bot.sendMessage(
+  }else if(text === "📊 Курсы"){ //ОТВЕТ КУРСЫ 
+    try {
+      const response = await fetch("https://moscaex.online/api2/usdt_rate");
+      const data = response.json();
+      const apiBuy = parseFloat(data.buy); 
+      const apiSell = parseFloat(data.sell);
+      const buy = (apiBuy + 0.5).toFixed(2);
+      const sell = (apiSell + 0.5).toFixed(2);
+      await bot.sendMessage(
    chatId, `
 Курс обмена рублей на USDT:
 
-Купить 1 USDT = 79.5 RUB
-Продать 1 USDT = 78.0 RUB
+💵 Купить 1 USDT = ${buy} RUB
+💵 Продать 1 USDT = ${sell} RUB
 
 🚨 Данный курс является биржевым и меняется каждую минуту
 
@@ -90,6 +97,10 @@ bot.on("message", async (msg) => {
   GROZTEX
    `
     )
+    } catch (error) {
+      
+    }
+    
   }else if (text === "📲 Связаться с нами"){
     await bot.sendMessage(
       chatId, `
@@ -108,7 +119,7 @@ bot.on("message", async (msg) => {
       },
 
     )
-  }else if(text === "📊 Биржа"){
+  }else if(text === "📊 Биржа"){ //ОТВЕТ БИРЖА
     await bot.sendMessage(
     chatId, `
 С радостью сообщаем Вам об создании своей биржи ! 🎉
@@ -125,7 +136,7 @@ bot.on("message", async (msg) => {
   GROZTEX
     `
     )
-  }else if (text === "🔎 AML проверка кошелька"){
+  }else if (text === "🔎 AML проверка кошелька"){ //ОТВЕТ АМЛ 
  await bot.sendMessage(
     chatId,`
 ❌ Проверка кошелька пока недоступка
