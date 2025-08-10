@@ -81,7 +81,7 @@ bot.on("message", async (msg) => {
       const buy = (apiBuy + 0.5).toFixed(2);
       const sell = (apiSell - 0.5).toFixed(2);
 
-      
+
       await bot.sendMessage(
    chatId, `
 Курс обмена рублей на USDT:
@@ -100,7 +100,7 @@ bot.on("message", async (msg) => {
    `
     )
     } catch (error) {
-      
+      console.log(`ошибка получения курса: ${error}`);
     }
     
   }else if (text === "📲 Связаться с нами"){
