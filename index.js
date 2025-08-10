@@ -79,7 +79,7 @@ bot.on("message", async (msg) => {
       const apiBuy = parseFloat(data.buy); 
       const apiSell = parseFloat(data.sell);
       const buy = (apiBuy + 0.5).toFixed(2);
-      const sell = (apiSell + 0.5).toFixed(2);
+      const sell = (apiSell - 0.5).toFixed(2);
       await bot.sendMessage(
    chatId, `
 Курс обмена рублей на USDT:
