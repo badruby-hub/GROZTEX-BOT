@@ -79,7 +79,7 @@ bot.on("message", async (msg) => {
       const data = await response.json();
       const apiBuy = parseFloat(data.buy); 
       const apiSell = parseFloat(data.sell);
-      const buy = (apiBuy - 0.4).toFixed(2);
+      const buy = (apiBuy + 0.4).toFixed(2);
       const sell = (apiSell + 0.4).toFixed(2);
 
 
