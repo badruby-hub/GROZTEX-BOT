@@ -77,10 +77,10 @@ bot.on("message", async (msg) => {
     try {
       const response = await fetch(apiMosca);
       const data = await response.json();
-      const apiBuy = parseFloat(data.buy); 
-      const apiSell = parseFloat(data.sell);
-      const buy = (apiSell).toFixed(2);
-      const sell = (apiBuy).toFixed(2);
+      const apiBuy = parseFloat(data?.sell); 
+      const apiSell = parseFloat(data?.buy);
+      const buy = (apiBuy + 0.4).toFixed(2);
+      const sell = (apiSell).toFixed(2);
 
 
       await bot.sendMessage(
