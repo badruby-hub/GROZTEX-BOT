@@ -23,6 +23,7 @@ model User {
   id            Int             @id @default(autoincrement())
   isAdmin       Boolean         @default(false)
   userName      String?         @unique
+  isDeletedBot  Boolean         @default(false)
   firstName     String?
   lastName      String?
   chatId        BigInt          @unique

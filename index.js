@@ -44,13 +44,14 @@ bot.on("message", async (msg) => {
             userName: userName,
             firstName: firstName,
             lastName: lastName,
+            isDeletedBot: false,
         },
         create:{
         chatId: BigInt(chatId),
         userName: userName,
         firstName: firstName,
         lastName: lastName,
-        
+        isDeletedBot: false,
         }
     })
   }else if(text === "🏦 О нас") { //ОТВЕТ О НАС 
