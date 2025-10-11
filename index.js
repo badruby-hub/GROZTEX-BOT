@@ -32,7 +32,7 @@ bot.on("message", async (msg) => {
 — По всем вопросам: <a href="https://t.me/GROZTEX">Поддержка</a>
 — Наш сайт: <a href="https://groztex.ru">сайт визитка</a>`,{
                 parse_mode: "HTML",
-                disable_web_page_preview: true,
+                disable_web_page_preview: false,
                 reply_markup:{
                   keyboard: [
                     [{text:'🏦 О нас'},{text:'📊 Курсы'}],
@@ -110,7 +110,7 @@ bot.on("message", async (msg) => {
 — Наш сайт: <a href="https://groztex.ru">сайт визитка</a>
    `,{
      parse_mode: "HTML",
-     disable_web_page_preview: true,
+     disable_web_page_preview: false,
    }
     )
     } catch (error) {
@@ -124,6 +124,7 @@ bot.on("message", async (msg) => {
 
 Для связи с нами напишите  - <a href="https://t.me/GROZTEX">Поддержка</a>
 Для свежих новостей: наш канал <a href="https://t.me/groztex_news">GROZTEX | Новости</a>
+
 Для получения консультации и покупки USDT, вам нужно создать заявку - нажмите на кнопку "Обмен"
 
 С уважением,
@@ -131,7 +132,7 @@ bot.on("message", async (msg) => {
       `,
       {
       parse_mode: "HTML",
-      disable_web_page_preview: true
+      disable_web_page_preview: false,
       },
 
     )
