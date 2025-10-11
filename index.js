@@ -28,10 +28,11 @@ bot.on("message", async (msg) => {
 
 Для покупки USDT нажмите на кнопку "Обмен"
 
-— Канал: <a href="https://t.me/groztex_news">groztex-news</a>
+— Канал: <a href="https://t.me/groztex_news">GROZTEX | Новости</a>
 — По всем вопросам: <a href="https://t.me/GROZTEX">Поддержка</a>
 — Наш сайт: <a href="https://groztex.ru">сайт визитка</a>`,{
                 parse_mode: "HTML",
+                disable_web_page_preview: true,
                 reply_markup:{
                   keyboard: [
                     [{text:'🏦 О нас'},{text:'📊 Курсы'}],
@@ -107,7 +108,10 @@ bot.on("message", async (msg) => {
 — Канал: <a href="https://t.me/groztex_news">GROZTEX | Новости</a>
 — По всем вопросам: <a href="https://t.me/GROZTEX">Поддержка</a>
 — Наш сайт: <a href="https://groztex.ru">сайт визитка</a>
-   `
+   `,{
+     parse_mode: "HTML",
+     disable_web_page_preview: true,
+   }
     )
     } catch (error) {
       console.log(`ошибка получения курса: ${error}`);
