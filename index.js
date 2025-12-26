@@ -4,7 +4,9 @@ require('dotenv').config();
 const token = process.env.BOT_TOKEN;
 const apiMosca = process.env.API_WELL_MOSCA;
 const bot = new TelegramBot(token, { polling: true });
+
 const prisma = new PrismaClient();
+
 bot.on("message", async (msg) => {
   const chatId = msg.chat.id;
   const userName = msg.from.username;
@@ -28,7 +30,7 @@ bot.on("message", async (msg) => {
 
 Для покупки USDT нажмите на кнопку "Обмен"
 
-— Канал: <a href="https://t.me/groztex_news">GROZTEX | Новости</a>
+— Канал: <a href="https://t.me/groztex_news_groz">GROZTEX | Новости</a>
 — По всем вопросам: <a href="https://t.me/GROZTEX">Поддержка</a>
 — Наш сайт: <a href="https://groztex.ru">сайт визитка</a>`,{
                 parse_mode: "HTML",
@@ -93,8 +95,8 @@ bot.on("message", async (msg) => {
    chatId, `
 Курс обмена рублей на USDT:
 
-💵 Купить 1 USDT = ${buy} RUB
-💵 Продать 1 USDT = ${sell} RUB
+💵 Купить 1 USDT = ${buy ? `${buy} RUB`: "-"} RUB
+💵 Продать 1 USDT = ${sell ? `${sell} RUB`: "-"} RUB
 
 🚨 Данный курс является биржевым и меняется каждую минуту
 
@@ -105,7 +107,7 @@ bot.on("message", async (msg) => {
 С уважением,
   GROZTEX
 
-— Канал: <a href="https://t.me/groztex_news">GROZTEX | Новости</a>
+— Канал: <a href="https://t.me/groztex_news_groz">GROZTEX | Новости</a>
 — По всем вопросам: <a href="https://t.me/GROZTEX">Поддержка</a>
 — Наш сайт: <a href="https://groztex.ru">сайт визитка</a>
    `,{
@@ -123,7 +125,7 @@ bot.on("message", async (msg) => {
 Наши операторы на связи 24/7 и готовы ответить на любые ваши вопросы
 
 Для связи с нами напишите  - <a href="https://t.me/GROZTEX">Поддержка</a>
-Для свежих новостей: наш канал <a href="https://t.me/groztex_news">GROZTEX | Новости</a>
+Для свежих новостей: наш канал <a href="https://t.me/groztex_news_groz">GROZTEX | Новости</a>
 
 Для получения консультации и покупки USDT, вам нужно создать заявку - нажмите на кнопку "Обмен"
 
