@@ -2,7 +2,7 @@ const { PrismaClient } = require("@prisma/client");
 const TelegramBot = require("node-telegram-bot-api");
 require('dotenv').config();
 const token = process.env.BOT_TOKEN;
-const apiMosca = process.env.API_WELL_MOSCA;
+// const apiMosca = process.env.API_WELL_MOSCA;
 const bot = new TelegramBot(token, { polling: true });
 
 const prisma = new PrismaClient();
@@ -83,12 +83,12 @@ bot.on("message", async (msg) => {
     );
   }else if(text === "📊 Курсы"){ //ОТВЕТ КУРСЫ 
     try {
-      const response = await fetch(apiMosca);
-      const data = await response.json();
-      const apiBuy = parseFloat(data?.sell); 
-      const apiSell = parseFloat(data?.buy);
-      const buy = (apiBuy + 0.4).toFixed(2);
-      const sell = (apiSell).toFixed(2);
+      // const response = await fetch(apiMosca);
+      // const data = await response.json();
+      // const apiBuy = parseFloat(data?.sell); 
+      // const apiSell = parseFloat(data?.buy);
+      const buy = 0;
+      const sell = 0;
 
 
       await bot.sendMessage(
